@@ -1,0 +1,290 @@
+/* pengaturan dasar global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* pembukus utama agar konten tidak terlalu melebar ke pinggir layar */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* judul setiap section */
+.judul-section {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #222;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 15px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.logo span {
+    color: #007bff;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #007bff;
+}
+
+/* hero section (fot & perkenalan */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.hero-teks {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-teks h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hightlight {
+    color: #007bff;
+}
+
+.hero-teks p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.hero-gambar img {
+    width: 280px;
+    border-radius: 50%;
+    border: 8px solid white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* tombol biru keren */
+.btn-utama {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-utama:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* about & pedidikan section */
+.about-section {
+    padding: 50px 0;
+}
+
+.about-flex {
+    display: flex;
+    gap: 30px;
+}
+
+.skill-box, .tabel.box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+}
+
+/* mengembalikan jarak kiri untuk daftar keahlian agar bullet tidak keluar kotak */
+.skill-box ul {
+    padding-left: 25px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+.skill-box h3, .tabel-box h3 {
+    margin-bottom: 15px;
+}
+
+.tabel-pendidikan {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tabel-pendidikan th, .tabel-pendidikan td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.tabel-pedidikan th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* PROYEK (CARD) */
+.proyek-section {
+    padding: 50px 0;
+}
+
+.proyek-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.kartu-proyek {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    border-top: 5px solid #007bff;
+}
+
+/* kontak & form */
+.kontak-section {
+    padding: 50px 0 80px 0;
+}
+
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-form {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+
+}
+
+textarea.input-form {
+    height: 100px;
+    resize: none;
+}
+
+/* footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* responsive media queris (HP) */
+@media (max-width: 768px) {
+    /* navbar jadi turun kebawah */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .menu a {
+        margin: 0 10px;
+    }
+
+    /* hero section: foto diatas, teks dibawah */
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .hero-teks {
+        padding-right: 0;
+        margin-top: 30px;
+    }
+
+    /* kotak keahlian dan tabel ditumpuk ke bawah */
+    .about-flex {
+        flex-direction: column;
+    }
+
+    /* kartu proyek ditumpuk ke bawah */
+    .proyek-grid {
+        flex-direction: column;
+    }
+}
+
+/* fitur dark mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .judul-section {
+    color: #ffffff;
+}
+
+body.dark-mode .menu a {
+    color: #cccccc;
+}
+
+/* mengubah warna kotak-kotak putih menjadi abu-abu gelap */
+body.dark-mode .navbar,
+body.dark-mode .skill-box,
+body.dark-mode .tabel-box,
+body.dark-mode .kartu-proyek,
+body.dark-mode .form-container {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .input-form {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.dark-mode .tabel-pendidikan th {
+    background-color: #333;
+}
+body.dark-mode .tabel-pendidikan td {
+    border-color: #444;
+}
+
